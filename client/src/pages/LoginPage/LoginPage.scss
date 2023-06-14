@@ -1,0 +1,49 @@
+@import '../../styles/variables.module.scss';
+
+.container {
+  margin: 15vh auto;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  width: 45vw;
+  height: 55vh;
+  display: flex;
+
+  .form-container-left {
+    width: 50%;
+
+    .signIn {
+      font-weight: bold;
+      margin: 45px 0 25px;
+    }
+
+    .form {
+      padding: 0 20px;
+    }
+
+    .forgotPw {
+      margin: 35px 0 15px;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        color: $mainPink;
+      }
+    }
+  }
+
+  .form-container-right {
+    width: 50%;
+    background-color: $mainPink;
+    color: $white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    .container-right {
+      padding: 10vh 0;
+
+      .text {
+        margin-bottom: 3vh;
+      }
+    }
+  }
+}

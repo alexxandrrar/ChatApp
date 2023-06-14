@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { routes } from './contants/path';
+import { routes } from './constants/path';
 import './App.scss';
 
 function App() {
