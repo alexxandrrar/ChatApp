@@ -1,0 +1,48 @@
+@import 'styles/variables.module.scss';
+
+.button {
+  border-radius: 20px;
+  border: 1px solid;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+
+  @mixin button_color($border-color, $bg-color, $color) {
+    background-color: $bg-color;
+    border-color: $border-color;
+    color: $color;
+  }
+
+  &.button_color.red {
+    @include button_color($mainRed, $mainRed, $white);
+  }
+
+  &.button_color.white {
+    @include button_color($white, transparent, $white);
+  }
+
+  @mixin button_size($font-size, $padding, $letter-spacing, $width) {
+    font-size: $font-size;
+    padding: $padding;
+    letter-spacing: $letter-spacing;
+    width: $width;
+  }
+
+  &.button_size.sm {
+    @include button_size(10px, 10px 12px, 0px, auto);
+  }
+  &.button_size.md {
+    @include button_size(12px, 12px 45px, 1px, auto);
+  }
+  &.button_size.lg {
+    @include button_size(16px, 15px 18px, 2px, 100%);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
