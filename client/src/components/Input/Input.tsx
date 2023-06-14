@@ -11,10 +11,11 @@ interface IInputProps {
   type: 'password' | 'email' | 'text';
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
+  id: string;
   placeholder?: string;
   value: string;
   required?: boolean;
-  error?: boolean;
+  error?: string;
 }
 
 export const Input: FC<IInputProps> = ({
@@ -24,6 +25,7 @@ export const Input: FC<IInputProps> = ({
   required,
   className,
   error,
+  id,
   onChange,
 }): JSX.Element => {
   const [inputType, setInputType] = useState(type);
@@ -54,6 +56,7 @@ export const Input: FC<IInputProps> = ({
         className={classNames(className, 'input')}
         maxLength={type === 'password' ? 30 : 500}
         onChange={onChange}
+        id={id}
       />
     </div>
   );

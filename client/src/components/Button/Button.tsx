@@ -16,7 +16,7 @@ export const Button: FC<IButtonProps> = ({
   onChange,
   children,
   className,
-  color = 'red',
+  color,
   size = 'md',
 }): JSX.Element => {
   return (
