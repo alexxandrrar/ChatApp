@@ -8,37 +8,37 @@
   height: 55vh;
   display: flex;
 
-  .form-container-left {
+  .containerLeft {
     width: 50%;
 
-    .signIn {
-      font-weight: bold;
-      margin: 45px 0 25px;
-    }
+    .formContainerLeft {
+      padding: 30px 20px;
 
-    .form {
-      padding: 0 20px;
-    }
+      .forgotPw {
+        cursor: pointer;
+        transition: 0.3s;
+        margin-bottom: 3vh;
 
-    .forgotPw {
-      margin: 35px 0 15px;
-      cursor: pointer;
-      transition: 0.3s;
-
-      &:hover {
-        color: $mainPink;
+        &:hover {
+          color: $mainPink;
+        }
       }
     }
   }
 
-  .form-container-right {
+  .containerRight {
     width: 50%;
     background-color: $mainPink;
+    background: linear-gradient(
+      158deg,
+      rgba(255, 65, 108, 1) 40%,
+      rgba(255, 75, 43, 1) 93%
+    );
     color: $white;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 
-    .container-right {
+    .formContainerRight {
       padding: 10vh 0;
 
       .text {

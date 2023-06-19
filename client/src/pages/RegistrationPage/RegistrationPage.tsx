@@ -1,16 +1,17 @@
-import commonConstants from 'constants/common.json';
 import { Input } from 'components/Input/Input';
+import commonConstants from 'constants/common.json';
 import { Button } from 'components/Button/Button';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
-import styles from './LoginPage.module.scss';
+import styles from './RegistrationPage.module.scss';
+import { useNavigate } from 'react-router-dom';
 
-export const LoginPage = (): JSX.Element => {
+export const RegistrationPage = (): JSX.Element => {
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
+      name: '',
       email: '',
       password: '',
     },
@@ -31,15 +32,32 @@ export const LoginPage = (): JSX.Element => {
     <div className={styles.container}>
       <div className={styles.containerLeft}>
         <div className={styles.formContainerLeft}>
-          <h1>{commonConstants.SIGN_IN}</h1>
-          <div>
+          <h1>{commonConstants.WELCOME_BACK}</h1>
+          <p className={styles.text}>{commonConstants.KEEP_CONNECTED}</p>
+          <Button color='white' onClick={() => navigate('/login')}>
+            SIGN IN
+          </Button>
+        </div>
+      </div>
+      <div className={styles.containerRight}>
+        <div className={styles.formContainerRight}>
+          <h1>{commonConstants.CREATE_ACCOUNT}</h1>
+          <div className={styles.form}>
+            <Input
+              id='name'
+              onChange={handleChange}
+              value={values.name}
+              type='text'
+              error={errors.name}
+              placeholder='Enter your name'
+            />
             <Input
               id='email'
               onChange={handleChange}
               value={values.email}
               type='email'
               error={errors.email}
-              icon={true}
+              placeholder='Enter your email'
             />
             <Input
               id='password'
@@ -47,21 +65,11 @@ export const LoginPage = (): JSX.Element => {
               value={values.password}
               type='password'
               error={errors.password}
-              icon={true}
+              placeholder='Enter your password'
             />
           </div>
-          <p className={styles.forgotPw}>{commonConstants.FORGOT_PASSWORD}</p>
           <Button color='red' onClick={handleSubmit}>
-            SIGN IN
-          </Button>
-        </div>
-      </div>
-      <div className={styles.containerRight}>
-        <div className={styles.formContainerRight}>
-          <h1>{commonConstants.HELLO_FRIEND}</h1>
-          <p className={styles.text}>{commonConstants.ENTER_US}</p>
-          <Button color='white' onClick={() => navigate('/register')}>
-            Sign up
+            SIGN UP
           </Button>
         </div>
       </div>

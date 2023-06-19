@@ -2,5 +2,8 @@
   "SIGN_IN": "Sign in",
   "FORGOT_PASSWORD": "Forgot you password?",
   "HELLO_FRIEND": "Hello, Friend!",
-  "ENTER_US": "Enter your personal details and start journey with us"
+  "ENTER_US": "Enter your personal details and start journey with us",
+  "WELCOME_BACK": "Welcome Back!",
+  "KEEP_CONNECTED": "To keep connected with us please login with your personal info",
+  "CREATE_ACCOUNT": "Create Account"
 }
